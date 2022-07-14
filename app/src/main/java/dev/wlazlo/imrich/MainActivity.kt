@@ -16,12 +16,17 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import dev.wlazlo.imrich.ui.theme.ImRichTheme
 
 class MainActivity : ComponentActivity() {
@@ -78,11 +83,29 @@ fun CreateImRich() {
             elevation = 4.dp
         ) {
             Column(
-                modifier = Modifier.height(300.dp) ,
-                verticalArrangement = Arrangement.Top,
+                modifier = Modifier.height(300.dp),
+                verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                Logo(modifier = Modifier.size(300.dp).padding(5.dp))
+                Logo(
+                    modifier = Modifier
+                        .size(300.dp)
+                        .padding(5.dp)
+                )
+                val offset = Offset(1.5f, 1.5f)
+                Text(
+                    color = Color.Blue,
+                    text = "I'M RICH",
+                    modifier = Modifier.padding(10.dp) ,
+                    style = TextStyle(
+                        fontSize = 58.sp,
+                        shadow = Shadow(
+                            color = Color.Blue,
+                            offset = offset,
+                            blurRadius = 3f
+                        )
+                    ),
+                )
             }
 
         }

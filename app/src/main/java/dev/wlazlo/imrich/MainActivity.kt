@@ -14,6 +14,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -78,8 +79,12 @@ fun CreateImRich() {
             shape = RoundedCornerShape(corner = CornerSize(15.dp)),
             elevation = 4.dp
         ) {
-            Column() {
-                Logo(150.dp, 5.dp)
+            Column(
+                modifier = Modifier.height(300.dp) ,
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Logo(300.dp, 5.dp)
             }
 
         }

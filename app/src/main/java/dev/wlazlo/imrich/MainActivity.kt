@@ -43,12 +43,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Logo(size: Dp, padding: Dp) {
+fun Logo(modifier: Modifier = Modifier) {
     Surface(
         shape = CircleShape,
-        modifier = Modifier
-            .size(size)
-            .padding(padding),
+        modifier = modifier,
         border = BorderStroke(0.5.dp, Color.LightGray),
         elevation = 4.dp,
         color = MaterialTheme.colors.onSurface.copy(
@@ -84,7 +82,7 @@ fun CreateImRich() {
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                Logo(300.dp, 5.dp)
+                Logo(modifier = Modifier.size(300.dp).padding(5.dp))
             }
 
         }
